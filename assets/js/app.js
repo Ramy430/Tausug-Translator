@@ -172,17 +172,64 @@ function exportForGitHub() {
 // ===== TRANSLATION FUNCTIONS =====
 function translateWord(word, fromLang, toLang) {
     if (!word.trim()) return "";
-// Helper function for testing (add this after translateWord)
+    
+    // Store original for return if needed
+    const originalWord = word;
+    word = word.toLowerCase().trim();
+    
+    // PRESERVE apostrophes - only remove ending punctuation for lookup
+    // This keeps the apostrophe in the word but also tries without trailing punctuation
+    const cleanWord = word.replace(/[.,!?;:]$/, ''); // REMOVED apostrophe from this regex!
+    
+    let actualFromLang = fromLang;
+    
+    // Auto-detect language
+    if (fromLang === 'auto') {
+        // Check dictionary with original word (preserves apostrophe)
+        if (dictionary[word]) {
+            actualFromLang = 'tsg';
+        } else {
+            const isEnglish = Object.values(dictionary).some(value => 
+                value.toLowerCase() === word
+            );
+            actualFromLang = isEnglish ? 'en' : 'tsg';
+        }
+    }
+    
+    // Translate Tausug → English
+    if (actualFromLang === 'tsg' && toLang === 'en') {
+        // Priority: 
+        // 1. Exact match (with apostrophe)
+        // 2. Match without trailing punctuation (but still with apostrophe)
+        return dictionary[word] || dictionary[cleanWord] || "Word not found in dictionary";
+    }
+    
+    // Translate English → Tausug
+    else if (actualFromLang === 'en' && toLang === 'tsg') {
+        for (let [tausug, english] of Object.entries(dictionary)) {
+            if (english.toLowerCase() === word) {
+                return tausug;
+            }
+        }
+        return "Word not found in dictionary";
+    }
+    
+    return originalWord;
+}
+
+// ✅ HELPER FUNCTION - Place this AFTER translateWord, not inside it
 function testWord(word) {
     console.log(`🔍 Testing: "${word}"`);
     const result = translateWord(word, 'tsg', 'en');
     console.log(`✅ Result: "${result}"`);
     return result;
 }
+
+function speakText(text, language) {
+    // ... rest of your speakText function (unchanged) ...
+}
+
     
-    // Store original for return if needed
-    const originalWord = word;
-    word = word.toLowerCase().trim();
     
     // PRESERVE apostrophes - only remove ending punctuation for lookup
     // This keeps the apostrophe in the word but also tries without trailing punctuation
