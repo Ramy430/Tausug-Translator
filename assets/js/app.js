@@ -368,7 +368,30 @@ function exportDictionary() {
     updateStatus(`Dictionary exported (${Object.keys(dictionary).length} words)`, 'success');
 }
 
+// ===== EXPORT WITH ALPHABETICAL ORDER =====
+function exportDictionarySorted() {
+    // Create a new object with sorted keys
+    const sortedDict = {};
+    Object.keys(dictionary).sort().forEach(key => {
+        sortedDict[key] = dictionary[key];
+    });
+    
+    const dataStr = JSON.stringify(sortedDict, null, 2);
+    const dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
+    
+    const link = document.createElement('a');
+    link.setAttribute('href', dataUri);
+    link.setAttribute('download', `tausug-dictionary-sorted-${new Date().toISOString().split('T')[0]}.json`);
+    link.click();
+    
+    updateStatus(`Dictionary exported (${Object.keys(dictionary).length} words, alphabetical)`, 'success');
+}
+
 function importDictionary(event) {
+    // ... your existing import code (DO NOT CHANGE) ...
+}
+
+    {
     const file = event.target.files[0];
     if (!file) return;
     
