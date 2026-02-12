@@ -101,15 +101,19 @@
                     <span>Welcome! Enter text and click "Translate" to begin.</span>
                 </div>
                 
-                <!-- Export/Import Section -->
+                <!-- ===== EXPORT/IMPORT SECTION - FIXED ===== -->
                 <div class="export-section">
                     <h4><i class="fas fa-exchange-alt"></i> Export / Import Dictionary</h4>
-                    
-
-            
-    
-
-                            
+                    <div class="export-buttons">
+                        <button id="exportBtn" class="btn-secondary">
+                            <i class="fas fa-file-export"></i> Export JSON
+                        </button>
+                        <button id="exportSortedBtn" class="btn-secondary">
+                            <i class="fas fa-sort-alpha-down"></i> Export Sorted
+                        </button>
+                        <button id="importBtn" class="btn-secondary">
+                            <i class="fas fa-file-import"></i> Import JSON
+                        </button>
                         <button id="exportForGitHubBtn" class="btn-primary">
                             <i class="fab fa-github"></i> Export for GitHub
                         </button>
@@ -201,7 +205,7 @@
                 </div>
             </div>
 
-            <!-- Test Word Details Button -->
+            <!-- Test Word Details Button (remove this before production) -->
             <div class="test-feature">
                 <p>
                     <i class="fas fa-info-circle"></i> Test the Word Details feature
@@ -260,7 +264,7 @@
         </div>
     </div>
 
-    <!-- ===== SENTENCES POPUP ===== -->
+    <!-- ===== SENTENCES POPUP - FIXED (NO EXPORT BUTTONS) ===== -->
     <div id="sentencesOverlay" class="popup-overlay"></div>
     <div id="sentencesPopup" class="sentences-popup">
         <div class="sentences-header">
@@ -276,17 +280,6 @@
                 <p>No example sentences found for this word.</p>
             </div>
         </div>
-        <div class="export-buttons">
-    <button id="exportBtn" class="btn-secondary">
-        <i class="fas fa-file-export"></i> Export JSON
-    </button>
-    <button id="exportSortedBtn" class="btn-secondary">
-        <i class="fas fa-sort-alpha-down"></i> Export Sorted
-    </button>
-    <button id="importBtn" class="btn-secondary">
-        <i class="fas fa-file-import"></i> Import JSON
-    </button>
-</div>
     </div>
 
     <!-- ===== FOOTER ===== -->
