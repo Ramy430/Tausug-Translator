@@ -271,3 +271,47 @@ h1 { color: var(--primary-dark); }
     .action-buttons { justify-content: stretch; }
     .action-btn { flex: 1; justify-content: center; }
 }
+/* ===== FIX CHARACTER COUNTER OVERLAP ===== */
+.output-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.char-count {
+    position: static !important;  /* Remove absolute positioning */
+    order: -1;                   /* Move to left side */
+    margin-right: auto;
+}
+
+.action-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: flex-end;
+}
+
+/* Mobile adjustment */
+@media (max-width: 768px) {
+    .output-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .char-count {
+        order: 0;                /* Reset order */
+        margin-bottom: 5px;
+        text-align: left;
+    }
+    
+    .action-buttons {
+        justify-content: stretch;
+    }
+    
+    .action-btn {
+        flex: 1;
+        justify-content: center;
+    }
+}
