@@ -4,8 +4,17 @@
     "description": "Tausug Language Dictionary - Community Edition",
     "lastUpdated": "2024-02-12",
     "totalWords": 35,
-    "contributors": ["Ramy430"],
-    "categories": ["nouns", "verbs", "adjectives", "pronouns", "numbers", "phrases"]
+    "contributors": [
+      "Ramy430"
+    ],
+    "categories": [
+      "nouns",
+      "verbs",
+      "adjectives",
+      "pronouns",
+      "numbers",
+      "phrases"
+    ]
   },
   "nouns": {
     "bay": "house",
@@ -47,7 +56,8 @@
     "buhat": "carry up",
     "tindug": "stand",
     "lingkud": "sit",
-    "sabut": "understand"
+    "sabut": "understand",
+    "Tawag": "To call"
   },
   "adjectives": {
     "dakula'": "big",
