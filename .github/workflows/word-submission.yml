@@ -61,3 +61,4 @@ jobs:
           branch: add-word-${{ github.event.issue.number }}
           base: main
           labels: word-submission, automated-pr
+          Add GitHub Action for automatic word PRs
