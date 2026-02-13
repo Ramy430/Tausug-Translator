@@ -4,8 +4,17 @@
     "description": "Tausug Language Dictionary - Community Edition",
     "lastUpdated": "2024-02-12",
     "totalWords": 35,
-    "contributors": ["Ramy430"],
-    "categories": ["nouns", "verbs", "adjectives", "pronouns", "numbers", "phrases"]
+    "contributors": [
+      "Ramy430"
+    ],
+    "categories": [
+      "nouns",
+      "verbs",
+      "adjectives",
+      "pronouns",
+      "numbers",
+      "phrases"
+    ]
   },
   "nouns": {
     "bay": "house",
@@ -27,7 +36,8 @@
     "iru": "dog",
     "dān": "road",
     "sūg": "Sulu",
-    "bahasa": "language"
+    "bahasa": "language",
+    "Mamanis": "Cute"
   },
   "verbs": {
     "kaun": "eat",
