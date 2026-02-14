@@ -121,7 +121,8 @@
     "kami": "we (exclusive)",
     "kitaniyu": "we (inclusive)",
     "kamu": "you (plural)",
-    "sila": "they"
+    "sila": "they",
+    "mo": "you(doer)"
   },
   "numbers": {
     "isa": "one",
