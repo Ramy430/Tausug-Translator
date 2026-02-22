@@ -290,5 +290,8 @@
   },
   "prepositions": {
     "sambil": "until,till"
+  },
+  "conjunctions": {
+    "sambil": "until, till"
   }
 }
